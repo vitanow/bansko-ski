@@ -1,0 +1,23 @@
+<!doctype html><html lang="bg"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
+<title>Банско Слопс</title>
+<link rel="manifest" href="manifest.json"><meta name="theme-color" content="#0a0f1c">
+<meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Банско">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="stylesheet" href="lib/maplibre-gl.css"><link rel="stylesheet" href="style.css"></head><body>
+<div id="map"></div><div id="pano" class="hidden"><div id="pinner"><img id="pimg" src="data/bansko-official-full.jpg" alt="Официална карта на пистите"><div id="pmk"></div></div></div>
+<div id="login" class="screen"><div class="card glass"><div class="logo">⛷</div><h1>Банско Слопс</h1><p>Карта на пистите, приятели и статистика. Демо вход - данните остават само на това устройство.</p>
+<input id="uname" placeholder="Вашето име" autocomplete="name"><button id="go" class="primary">Влез</button></div></div>
+<header id="top" class="glass"><div class="who"><div id="myav" class="av sm">?</div><div><b id="hello">Банско</b><small id="gps">Търсене на GPS...</small></div></div><button id="logout" class="chip">Изход</button></header>
+<div id="ctrls"><button id="compass" class="fab glass" title="Север и нулиране"><span id="needle">▲</span></button><button id="dim" class="fab glass">2D</button><button id="style" class="fab glass" title="Зимна / Сателит / Топо / Панорама">❄</button><button id="me" class="fab glass" title="Центрирай към мен">◎</button></div>
+<section id="sheet" class="glass"><div class="grab"></div>
+<nav id="tabs"><button data-t="map" class="on">Карта</button><button data-t="friends">Приятели</button><button data-t="stats">Статистика</button></nav>
+<div id="t-map" class="tab"><div id="modes" class="seg"><button data-m="0" class="on">Зимна</button><button data-m="1">Сателит</button><button data-m="2">Топо</button><button data-m="3">Панорама</button></div>
+<div class="legend"><span><i style="background:#22c55e"></i>Лесна</span><span><i style="background:#3b82f6"></i>Средна</span><span><i style="background:#ef4444"></i>Трудна</span><span><i style="background:#111;border:1px solid #fff8"></i>Експертна</span><span><i style="background:#1e2a5a;border:1px solid #fff8"></i>Лифт</span></div>
+<div class="mini"><div><b id="mSpeed">0</b><small>км/ч</small></div><div><b id="mDist">0.0</b><small>км днес</small></div><div><b id="mOn">4</b><small>приятели на пистата</small></div></div></div>
+<div id="t-friends" class="tab hidden"><ul id="flist"></ul><p class="note">Демо режим - позициите на приятелите са симулирани.</p></div>
+<div id="t-stats" class="tab hidden"><div class="grid"><div class="tile"><small>Скорост</small><b id="sSpeed">0</b><em>км/ч</em></div><div class="tile"><small>Макс. скорост</small><b id="sMax">0</b><em>км/ч</em></div><div class="tile"><small>Разстояние</small><b id="sDist">0.00</b><em>км</em></div><div class="tile"><small>Денивелация</small><b id="sVert">0</b><em>м спуск</em></div><div class="tile"><small>Надм. височина</small><b id="sAlt">-</b><em>м</em></div><div class="tile"><small>Време</small><b id="sTime">0:00</b><em>ч:мин</em></div></div><button id="reset" class="chip wide">Нулирай сесията</button></div>
+</section><div id="toast"></div>
+<script src="lib/maplibre-gl.js"></script><script src="app.js"></script></body></html>
